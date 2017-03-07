@@ -40,25 +40,25 @@ def partition(list, part):
 
     return left
 
-# def partition2(list, part):
-#     curr = list.head
-#     head = curr
-#     tail = curr
-#
-#     if curr == None or curr.next == None:
-#         return False
-#
-#     while curr and curr.next:
-#         if curr.data < part:
-#             print "less"
-#             curr.next = head
-#             head = curr
-#         else:
-#             print "more"
-#             curr.next = tail
-#             tail = curr
-#         curr = curr.next
-#     tail.next = None
+def partition2(list, part):
+    curr = list.head
+    head = curr
+    tail = curr
+
+    if curr == None or curr.next == None:
+        return False
+
+    while curr:
+        if curr.data < part:
+            curr.next = head
+            head = curr
+        else:
+            curr.next = tail
+            tail = curr
+        curr = curr.next
+    tail.next = None
+
+    return head
 
 
 def printList(list):
